@@ -23,25 +23,41 @@ int main(void){
     
     /*descobre o tempo que o pedro vai levar para chegar em C*/
     tempo_chegada_pedro = (ac / vel_pedro) * 60;
-   
-    if (tempo_chegada_pedro >= 60 && tempo_chegada_pedro < 120 ){
-        minuto_p = minuto_p + (tempo_chegada_pedro % 10);
-        hora_p = hora_p + tempo_chegada_pedro/60;
-    }
+    hora_p = hora_p+(tempo_chegada_pedro / 60);
 
-    if (tempo_chegada_pedro >= 120){
-        minuto_p = 0 + (tempo_chegada_pedro % 100);
+    if (tempo_chegada_pedro < 60){
+        minuto_p = tempo_chegada_pedro;
+    }
+    
+    if (tempo_chegada_pedro >= 60){
+        minuto_p = (minuto_p + (tempo_chegada_pedro % 60));
+    } 
+    if (minuto_p >= 60){
+        minuto_p = minuto_p - 60;
         hora_p = hora_p + 1;
     }
 
     vel_carol = vel_pedro / 2;
     tempo_chegada_carol = (bc / vel_carol)*60;
-
-    hora_c = hora_p - tempo_chegada_carol;
-
-
-    printf("%d:%d\n", hora_c, minuto_c);
-
-
+    hora_c = tempo_chegada_carol/60;
+    minuto_c = tempo_chegada_carol % 60;
+    hora_c = hora_p - hora_c;
+    minuto_c = minuto_p - minuto_c;
+    
+    if (hora_c >= 24){
+        hora_c = hora_c - 24;
+    }
+    
+    if (hora_c < 0){
+        hora_c = hora_c + 24;
+    }
+    if (minuto_c >= 60){
+        minuto_c = minuto_c - 60;
+        hora_c = hora_c + 1;
+    }
+    if (minuto_c < 0){
+        minuto_c = minuto_c * -1;
+    }
+    printf("%d:%d", hora_c, minuto_c);
     return 0;
 }
