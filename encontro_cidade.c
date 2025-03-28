@@ -4,8 +4,6 @@ int main(void){
     int ab, ac, bc, hora_p, minuto_p, hora_c, minuto_c, tempo_chegada_pedro, tempo_chegada_carol;
     float vel_pedro, vel_carol;
 
-    hora_c = 0;
-    minuto_c = 0;
     /*informa a distancia entre A e B*/
     scanf("%d", &ab);
     
