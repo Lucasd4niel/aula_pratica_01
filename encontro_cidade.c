@@ -44,5 +44,4 @@ int main(void){
 
 
     return 0;
-}git config --global user.email "lucasdanieldmx@gmail.com"
-  git config --global user.name "lucasd4niel"
+}
