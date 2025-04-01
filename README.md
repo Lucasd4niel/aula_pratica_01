@@ -3,6 +3,9 @@
 ## TODOS O UNICO EXERCICIO DOCUMENTADO É O PRIMEIRO POIS FOI MEIO COMPLEXO, SEGUE EM FORMATO SEM DOCUMENTAÇÃO PARA MELHOR VISUALIZAÇÃO
 
 ```
+#include <stdio.h>
+
+int main(void){
     int ab, ac, bc, hora_p, minuto_p, hora_c, minuto_c, tempo_chegada_pedro, tempo_chegada_carol;
     float vel_pedro, vel_carol;
 
@@ -92,4 +95,4 @@
     printf("%d:%d", hora_c, minuto_c);
     return 0;
 }
-```
+´´´
